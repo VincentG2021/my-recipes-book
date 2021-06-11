@@ -2,7 +2,7 @@
 const express = require("express");
 const app = express();
 
-const recipe = require("./controllers/recipe")
+const recipeControl = require("./controllers/recipe")
 
 // app setup
 app.use(express.json())
@@ -18,7 +18,15 @@ app.get('/',(req, res) => {
 
 
 // Create here your api setup
+app.post('/api/recipe/add', (req, res) => {
+  console.log('Hugh fetch ADD from the brain, req.body = ', req.body, 'res = ', res)
+  recipeControl.addRecipeDB(req.body)
+})
 
+app.post('/api/recipe/load', (req,res) => {
+  console.log("Hugh fetch LOAD from the brain")
+  recipeControl.loadRecipe(res)
+})
 
 
 
