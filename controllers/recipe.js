@@ -6,7 +6,7 @@ db.run("CREATE TABLE IF NOT EXISTS recipe(id INTEGER PRIMARY KEY AUTOINCREMENT, 
 
 const addRecipeDB = (recipecontrol, res) =>{
     // code to add to the database
-      console.log("From the controller addRecipeDB ok, added :" )
+      console.log("ok from controllers addRecipeDB, new recipe added :" )
       let db = new sqlite3.Database('./db/db.myrecipes');
   
     // insert one row into the langs table
@@ -31,7 +31,7 @@ const loadRecipe = (res) => {
       if (err) {
         console.error(err.message);
       }
-      console.log("Ok controllers loadRecipe connected to myrecipes database.");
+      console.log("Ok controllers loadRecipe connected to myrecipes db.");
     });
 
     db.serialize(() => {
